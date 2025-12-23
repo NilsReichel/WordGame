@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Pr
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGame.Core", "WordGame.Core\WordGame.Core.csproj", "{819AB95C-19CA-4BB4-8DDA-8C0F25FBB80A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGame.Cli", "WordGame.Cli\WordGame.Cli.csproj", "{6C241AA1-041E-443F-ACC3-F4711E5D3789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{E85CC9E6-E6FA-40A1-9627-88106DAA54E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{E85CC9E6-E6FA-40A1-9627-88106DAA54E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85CC9E6-E6FA-40A1-9627-88106DAA54E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{819AB95C-19CA-4BB4-8DDA-8C0F25FBB80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{819AB95C-19CA-4BB4-8DDA-8C0F25FBB80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{819AB95C-19CA-4BB4-8DDA-8C0F25FBB80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{819AB95C-19CA-4BB4-8DDA-8C0F25FBB80A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C241AA1-041E-443F-ACC3-F4711E5D3789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C241AA1-041E-443F-ACC3-F4711E5D3789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C241AA1-041E-443F-ACC3-F4711E5D3789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C241AA1-041E-443F-ACC3-F4711E5D3789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
