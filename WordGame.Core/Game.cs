@@ -1,6 +1,57 @@
 ﻿namespace WordGame.Core;
 
+/// <summary>
+/// Represents a word chain game where each new word must start with the last letter of the previous word.
+/// </summary>
+
 public class Game
 {
+    private List<string> _words = new();
 
+    /// <summary>
+    /// Gets the current chain of words as a comma-separated string.
+    /// </summary>
+    public string Get
+    {
+        get
+        {
+            return String.Join(", ", _words);
+        }
+    }
+
+    /// <summary>
+    /// Attempts to add a new word to the chain.
+    /// </summary>
+    /// <param name="word"></param>
+    /// <returns></returns>
+    public bool Add(string word)
+    {
+        // first word is start word
+        if (_words.Count == 0)
+        {
+            _words.Add(word);
+            return true;
+        }
+        else
+        {
+            // check if word starts with last letter of previous word
+            string lastWord = _words[^1];
+
+            string lastLetter = lastWord.Substring(lastWord.Length -1);
+
+            lastLetter = lastLetter.ToLower();
+
+            string firstLetter = word.Substring(0, 1).ToLower();
+
+            if (lastLetter == firstLetter)
+            {
+                _words.Add(word);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 }
