@@ -7,7 +7,7 @@
     Title="WordGame">
 
     <ShellContent
-        Title="Home"
+        Title="Wordgame"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
