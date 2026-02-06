@@ -1,4 +1,6 @@
-﻿namespace WordGame.Core;
+﻿using System.Runtime.CompilerServices;
+
+namespace WordGame.Core;
 
 /// <summary>
 /// Represents a word chain game where each new word must start with the last letter of the previous word.
@@ -6,6 +8,13 @@
 
 public class Game
 {
+    private bool _doubleWordsAllowed = false;
+
+    public void AllowDoubleWords(bool a)
+    {
+       this._doubleWordsAllowed = a;
+    }
+
     private List<string> _words = new();
 
     /// <summary>
@@ -45,8 +54,20 @@ public class Game
 
             if (lastLetter == firstLetter)
             {
-                _words.Add(word);
-                return true;
+                if (_doubleWordsAllowed)
+                {
+                    _words.Add(word);
+                    return true;
+                }
+                else if (_words.Contains(word))
+                {
+                    return false;
+                }
+                else
+                {
+                    _words.Add(word);
+                    return true;
+                }
             }
             else
             {

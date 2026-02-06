@@ -9,7 +9,7 @@
         Padding="10"
         ColumnSpacing="5"
         RowSpacing="5"
-        RowDefinitions="Auto, 60, Auto" 
+        RowDefinitions="Auto, 60, Auto, Auto" 
         ColumnDefinitions="Auto, *">
 
         <!-- Spalte 0/Zeile 0 -->
@@ -20,7 +20,8 @@
         <!-- Spalte 1/Zeile 0 -->
         <Entry Placeholder="Wort hier eingeben"
                Grid.Column="1"
-               Text="{Binding Input}"/>
+               Text="{Binding Input}"
+               ReturnCommand="{Binding AddCommand}"/>
 
         <!-- Spalte 0 + 1/Zeile 1 -->
         <Label Text="{Binding Output, StringFormat='{}Wortkette: {0}'}" Grid.ColumnSpan="2" Grid.Row="1" />
@@ -30,6 +31,9 @@
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
                 Command="{Binding AddCommand}" />
+
+        <Switch Grid.Row="3"
+                IsToggled="{Binding DoubleWordsAllowed}" />
     </Grid>
 
 </ContentPage>

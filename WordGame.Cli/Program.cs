@@ -5,6 +5,18 @@ Console.WriteLine("Drücken Sie ENTER, um zu beenden.");
 
 Game game = new Game();
 
+Console.Write("Sollen Doppelte Wörter erlaubt werden? [Ja, Nein]:");
+string answer = Console.ReadLine();
+
+if (answer.ToLower() == "ja")
+{
+    game.AllowDoubleWords(true);
+}
+else
+{
+    game.AllowDoubleWords(false);
+}
+
 string word = "START";
 
 while (word != "")

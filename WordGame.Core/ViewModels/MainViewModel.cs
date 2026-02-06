@@ -5,6 +5,16 @@ namespace WordGame.Core.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
+    private Game _game = new Game();
+
+    [ObservableProperty]
+    private bool _doubleWordsAllowed = false;
+
+    partial void OnDoubleWordsAllowedChanged(bool value)
+    {
+        this._game.AllowDoubleWords(value);
+    }
+
     [ObservableProperty]
     private string _output = string.Empty;
 
@@ -14,6 +24,8 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     private void Add()
     {
-
+        this._game.Add(this.Input);
+        this.Output = this._game.Get;
+        this.Input = string.Empty;
     }
 }
