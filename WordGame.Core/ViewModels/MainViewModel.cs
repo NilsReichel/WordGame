@@ -21,11 +21,30 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private string _input = string.Empty;
 
+    [ObservableProperty]
+    private string _status = string.Empty;
+
     [RelayCommand]
     private void Add()
     {
-        this._game.Add(this.Input);
-        this.Output = this._game.Get;
-        this.Input = string.Empty;
+        try
+        {
+            bool result = this._game.Add(this.Input);
+            if (result)
+            {
+                this.Output = this._game.Get;
+                this.Input = string.Empty;
+                this.Status = string.Empty;
+            }
+            else            
+            {
+                this.Status = "Das Wort ist falsch.";
+            }
+        }
+        catch (WordNotAllowedException we)
+        {
+            this.Status = we.Message;
+        }
+        
     }
 }

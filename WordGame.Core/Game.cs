@@ -1,5 +1,4 @@
 ﻿using System.Runtime.CompilerServices;
-
 namespace WordGame.Core;
 
 /// <summary>
@@ -8,6 +7,11 @@ namespace WordGame.Core;
 
 public class Game
 {
+    public Game(bool allowDupplicates = false)
+    {
+        this._doubleWordsAllowed = allowDupplicates;
+    }
+
     private bool _doubleWordsAllowed = false;
 
     public void AllowDoubleWords(bool a)
@@ -16,6 +20,8 @@ public class Game
     }
 
     private List<string> _words = new();
+
+    private List<string> _notAllowedWords = ["dummkopf", "doof"];
 
     /// <summary>
     /// Gets the current chain of words as a comma-separated string.
@@ -35,6 +41,10 @@ public class Game
     /// <returns></returns>
     public bool Add(string word)
     {
+        if (_notAllowedWords.Contains(word.ToLower()))
+        {
+            throw new WordNotAllowedException($"Das Wort '{word}' ist in diesem Spiel nicht erlaubt.");
+        }
         // first word is start word
         if (_words.Count == 0)
         {

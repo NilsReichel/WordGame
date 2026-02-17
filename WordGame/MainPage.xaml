@@ -1,39 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:WordGame.Core.ViewModels;assembly=WordGame.Core"
-             x:DataType="viewmodels:MainViewModel"
-             x:Class="WordGame.MainPage">
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:viewmodels="clr-namespace:WordGame.Core.ViewModels;assembly=WordGame.Core"
+                 x:DataType="viewmodels:MainViewModel"
+                 x:Class="WordGame.MainPage">
 
     <Grid 
-        Padding="10"
-        ColumnSpacing="5"
-        RowSpacing="5"
-        RowDefinitions="Auto, 60, Auto, Auto" 
-        ColumnDefinitions="Auto, *">
+            Padding="10"
+            ColumnSpacing="5"
+            RowSpacing="5"
+            RowDefinitions="Auto, 60, Auto, Auto, Auto, Auto" 
+            ColumnDefinitions="Auto, *">
 
         <!-- Spalte 0/Zeile 0 -->
         <Label Text="Geben Sie hier Ihr Wort ein:"
-               FontSize="Large" 
-               TextColor="{StaticResource Primary}" />
+                   FontSize="Large" 
+                   TextColor="{StaticResource Primary}" />
 
         <!-- Spalte 1/Zeile 0 -->
         <Entry Placeholder="Wort hier eingeben"
-               Grid.Column="1"
-               Text="{Binding Input}"
-               ReturnCommand="{Binding AddCommand}"/>
+                   Grid.Column="1"
+                   Text="{Binding Input}"
+                   ReturnCommand="{Binding AddCommand}"/>
 
         <!-- Spalte 0 + 1/Zeile 1 -->
         <Label Text="{Binding Output, StringFormat='{}Wortkette: {0}'}" Grid.ColumnSpan="2" Grid.Row="1" />
 
         <!-- Spalte 0 + 1/Zeile 2 -->
         <Button Text="Absenden"
-                Grid.Row="2"
-                Grid.ColumnSpan="2"
-                Command="{Binding AddCommand}" />
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Command="{Binding AddCommand}" />
 
-        <Switch Grid.Row="3"
-                IsToggled="{Binding DoubleWordsAllowed}" />
+        <!-- Spalte 0/Zeile 3 -->
+        <Label Text="Doppelte Wörter erlauben" 
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"/>
+
+        <!--Spalte 0/Zeile 4-->
+        <Switch Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    IsToggled="{Binding DoubleWordsAllowed}" />
+
+        <!-- Spalte 0/Zeile 5 -->
+        <Label Text="{Binding Status}" 
+                   Grid.Row="5"
+                   Grid.ColumnSpan="2"
+                   FontSize="Medium" 
+                   FontAttributes="Bold" 
+                   TextColor="{StaticResource Primary}"/>
     </Grid>
 
 </ContentPage>

@@ -26,18 +26,24 @@ while (word != "")
 
     if (word != "")
     {
-        bool result = game.Add(word);
-
-
-        if (result == true)
+        try
         {
-            Console.WriteLine("Super!");
-            Console.WriteLine("Aktuelle Kette: " + game.Get);
+            bool result = game.Add(word);
+
+            if (result == true)
+            {
+                Console.WriteLine("Super!");
+                Console.WriteLine("Aktuelle Kette: " + game.Get);
+            }
+            else
+            {
+                Console.WriteLine("Oje, das war falsch");
+                Console.WriteLine("Aktuelle Kette: " + game.Get);
+            }
         }
-        else
+        catch (WordNotAllowedException we)
         {
-            Console.WriteLine("Oje, das war falsch");
-            Console.WriteLine("Aktuelle Kette: " + game.Get);
+            Console.WriteLine(we.Message);
         }
     }
 }
