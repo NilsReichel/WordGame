@@ -9,7 +9,7 @@
             Padding="10"
             ColumnSpacing="5"
             RowSpacing="5"
-            RowDefinitions="Auto, 60, Auto, Auto, Auto, Auto" 
+            RowDefinitions="Auto, 60, Auto, Auto, Auto, Auto"
             ColumnDefinitions="Auto, *">
 
         <!-- Spalte 0/Zeile 0 -->

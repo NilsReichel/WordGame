@@ -1,14 +1,13 @@
 ﻿using WordGame.Core.ViewModels;
 
-namespace WordGame
+namespace WordGame;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+   
+    public MainPage(MainViewModel viewModel)
     {
-       
-        public MainPage()
-        {
-            InitializeComponent();
-            BindingContext = new MainViewModel();
-        }
+        InitializeComponent();
+        BindingContext = viewModel;
     }
 }
