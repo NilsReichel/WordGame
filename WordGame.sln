@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36705.20 d17.14
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11520.95 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGame.Gui", "WordGame\WordGame.Gui.csproj", "{E85CC9E6-E6FA-40A1-9627-88106DAA54E8}"
 EndProject
@@ -13,6 +13,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGame.Core", "WordGame.Core\WordGame.Core.csproj", "{819AB95C-19CA-4BB4-8DDA-8C0F25FBB80A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGame.Cli", "WordGame.Cli\WordGame.Cli.csproj", "{6C241AA1-041E-443F-ACC3-F4711E5D3789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordGame.Data", "WordGame.Data\WordGame.Data.csproj", "{D0D4A6D9-F701-411C-B0F8-80CB837C086A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6C241AA1-041E-443F-ACC3-F4711E5D3789}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C241AA1-041E-443F-ACC3-F4711E5D3789}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C241AA1-041E-443F-ACC3-F4711E5D3789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D4A6D9-F701-411C-B0F8-80CB837C086A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D4A6D9-F701-411C-B0F8-80CB837C086A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D4A6D9-F701-411C-B0F8-80CB837C086A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D4A6D9-F701-411C-B0F8-80CB837C086A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
