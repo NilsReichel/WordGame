@@ -66,6 +66,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\WordGame.Core\WordGame.Core.csproj" />
+	  <ProjectReference Include="..\WordGame.Data\WordGame.Data.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

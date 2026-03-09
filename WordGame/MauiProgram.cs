@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using WordGame.Core.ViewModels;
+using WordGame.Data;
+using WordGame.Data.Services;
 
 namespace WordGame
 {
@@ -20,6 +22,12 @@ namespace WordGame
             builder.Services.AddSingleton<MainViewModel>();
             // Registrierung der MainPage
             builder.Services.AddSingleton<MainPage>();
+
+            // Repositorys
+            // Folgende Zeile wäre unlogisch, da vom Typ IRepository ein Objekt werstellt werden würde
+            // => bei einer Schnittstelle nicht möglich!
+            // builder.Services.AddSingleton<IRepository>();
+            builder.Services.AddSingleton<IRepository>(new MemoryRepository());
 
 #if DEBUG
             builder.Logging.AddDebug();
