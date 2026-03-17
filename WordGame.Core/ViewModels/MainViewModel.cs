@@ -15,6 +15,22 @@ public partial class MainViewModel : ObservableObject
         this._repository = repository;
     }
 
+    [RelayCommand]
+    private void Load()
+    {
+        List<Word> words = this._repository.All();
+
+        List<string> wordsTemp = [];
+        foreach (Word word in words)
+        {
+            wordsTemp.Add(word.value);
+        }
+
+        this._game.SetWords(wordsTemp);
+
+        this.Output = this._game.Get;
+    }
+
     [ObservableProperty]
     private bool _doubleWordsAllowed = false;
 

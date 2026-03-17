@@ -23,6 +23,11 @@ public class Game
 
     private List<string> _notAllowedWords = ["dummkopf", "doof"];
 
+    public void SetWords(List<string> words)
+    {
+        this._words = words;
+    }
+
     /// <summary>
     /// Gets the current chain of words as a comma-separated string.
     /// </summary>
