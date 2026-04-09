@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
 using WordGame.Core.ViewModels;
 using WordGame.Data;
 using WordGame.Data.Services;
@@ -12,6 +13,7 @@ namespace WordGame
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -27,10 +29,10 @@ namespace WordGame
             // Folgende Zeile wäre unlogisch, da vom Typ IRepository ein Objekt werstellt werden würde
             // => bei einer Schnittstelle nicht möglich!
             // builder.Services.AddSingleton<IRepository>();
-            builder.Services.AddSingleton<IRepository>(new MemoryRepository());
+            builder.Services.AddSingleton<IRepository>(new XMLRepository());
 
 #if DEBUG
-            builder.Logging.AddDebug();
+            builder.Logging.AddDebug(); 
 #endif
 
             return builder.Build();

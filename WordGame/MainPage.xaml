@@ -3,13 +3,21 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:viewmodels="clr-namespace:WordGame.Core.ViewModels;assembly=WordGame.Core"
                  x:DataType="viewmodels:MainViewModel"
+                 xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
                  x:Class="WordGame.MainPage">
 
-    <Grid 
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+                EventName="Loaded"
+                Command="{Binding LoadCommand}"
+                BindingContext="{Binding Source={x:Reference MainGrid}, Path=BindingContext}"/>
+    </ContentPage.Behaviors>
+
+    <Grid   x:Name="MainGrid"
             Padding="10"
             ColumnSpacing="5"
             RowSpacing="5"
-            RowDefinitions="Auto, 60, Auto, Auto, Auto, Auto"
+            RowDefinitions="Auto, 60, Auto, Auto, Auto, Auto, Auto"
             ColumnDefinitions="Auto, *">
 
         <!-- Spalte 0/Zeile 0 -->
@@ -49,6 +57,8 @@
                    FontSize="Medium" 
                    FontAttributes="Bold" 
                    TextColor="{StaticResource Primary}"/>
+
+        <Button Text="Load" Command="{Binding LoadCommand}" Grid.Row="6" Grid.ColumnSpan="2" />
     </Grid>
 
 </ContentPage>
